@@ -1,13 +1,11 @@
-const books = [
-  {
-    title: 'The Awakening',
-    author: 'Kate Chopin',
-  },
-  {
-    title: 'City of Glass',
-    author: 'Paul Auster',
-  },
-];
+const faker = require('faker');
+
+const books = Array
+  .from(Array(10))
+  .map((x, i) => ({
+    title: faker.lorem.sentence(),
+    author: faker.name.findName(),
+  }))
 
 const resolvers = {
   Query: {
